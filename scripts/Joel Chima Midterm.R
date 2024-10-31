@@ -7,15 +7,17 @@ tyler_activity_laps_10_24 %>%
   group_by(sport) %>% 
   tally()
 
-TAL1024_run <- tyler_activity_laps_10_24 %>% 
-  filter(sport)
+filter(tyler_activity_laps_10_24, sport == "running")
 
-filter(tyler_activity_laps_10_24, sport == running)
+tal1024_run <- tyler_activity_laps_10_24 %>% 
+  filter(sport == "running")
+tal1024_run
 
 #3.Next, Tyler often has to take walk breaks between laps right now because trying to change how you’ve run for 25 years is hard. You can assume that any lap with a pace above 10 minute-per-mile pace is walking, so remove those laps. You should also remove any abnormally fast laps (< 5 minute-per-mile pace) and abnormally short records where the total elapsed time is one minute or less.---
-TAL1024_run <- tyler_activity_laps_10_24 %>% 
-  filter(sport)
+tal1024_run_stable <- tal1024_run %>% 
+  filter(minutes_per_mile < 10, minutes_per_mile > 5, total_elapsed_time_s > 1)
 
+tal1024_run_stable
 
 #4.Create a new categorical variable, pace, that categorizes laps by pace: “fast” (< 6 minutes-per-mile), “medium” (6:00 to 8:00), and “slow” ( > 8:00). Create a second categorical variable, form that distinguishes between laps run in the year 2024 (“new”, as Tyler started his rehab in January 2024) and all prior years (“old”).---
 
