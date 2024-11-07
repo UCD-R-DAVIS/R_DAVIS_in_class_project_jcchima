@@ -15,7 +15,9 @@ tal1024_run
 
 #3.Next, Tyler often has to take walk breaks between laps right now because trying to change how you’ve run for 25 years is hard. You can assume that any lap with a pace above 10 minute-per-mile pace is walking, so remove those laps. You should also remove any abnormally fast laps (< 5 minute-per-mile pace) and abnormally short records where the total elapsed time is one minute or less.---
 tal1024_run_stable <- tal1024_run %>% 
-  filter(minutes_per_mile < 10, minutes_per_mile > 5, total_elapsed_time_s > 1)
+  filter(minutes_per_mile < 10, 
+         minutes_per_mile > 5, 
+         total_elapsed_time_s > 1)
 
 tal1024_run_stable
 
