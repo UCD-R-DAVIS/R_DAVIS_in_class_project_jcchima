@@ -23,8 +23,13 @@ gapminder %>%
   group_by(continent, year) %>% 
   summarize(mean_lifeExp = mean(lifeExp)) %>% 
   ggplot(data = ., mapping = aes(x = year, y = mean_lifeExp, group = continent, color = continent)) +
-  geom_smooth() +
+  geom_point() +
   theme_linedraw() +
   ggtitle("Change in Life Expectancy by Continent") + ylab("Mean Life Expectancy") + xlab("Year") +
   theme(panel.grid = element_blank())  
   
+#3. Create a boxplot that shows the life expectency for Brazil, China, El Salvador, Niger, and the United States, with the data points in the backgroud using geom_jitter. Label the X and Y axis with “Country” and “Life Expectancy” and title the plot “Life Expectancy of Five Countries”.
+gapminder[gapminder$country%in%c("Brazil", "China", "El Salvador", "Niger", "United States")
+ggplot(data = gapminder[gapminder$country%in%c("Brazil", "China", "El Salvador", "Niger", "United States")], mapping = aes()) +
+  xlab("country") + lab("Life expectancy")
+  ggtitle("life expectancy of five countries")
