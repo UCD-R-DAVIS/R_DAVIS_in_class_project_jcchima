@@ -48,6 +48,8 @@ gapminder %>%
   ggplot(mapping = aes(x = reorder(country, popdiff), y =popdiff, group = continent)) +
   geom_col(aes(fill = continent,)) +
   facet_wrap(~continent, scales = "free") +
-  theme(axis.text.x = element_text(size = rel(0.9), angle = 90, vjust = 1, hjust=1))
+  theme(axis.text.x = element_text(size = rel(0.9), angle = 90, vjust = 1, hjust=1)) +
+  xlab("Country") +
+  ylab("Change in Population Between 2002 and 2007")
 
 ?element_text
