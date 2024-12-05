@@ -43,8 +43,11 @@ MHT <- mloa_TD %>%
   summarise(mean = mean(temp_C_2m, na.rm = TRUE))
 
 #Finally, make a ggplot scatterplot of the mean monthly temperature, with points colored by local hour.
+
 ggplot(data = MHT, mapping = aes(x = monthLocal, y = mean, color =hourLocal)) +
   geom_point(alpha = 0.5) +
+  theme_bw() +
   xlab("Month") +
   ylab("Mean Hourly Temperature")
+  
   
